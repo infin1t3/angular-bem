@@ -1,0 +1,78 @@
+$component: '.app';
+
+#{$component} {
+
+  height: 100vh;
+
+  &__header {
+    background: lightblue;
+  }
+
+  &__content {
+    background: lightcyan;
+  }
+
+  &__footer {
+    background: transparent;
+  }
+}
+
+.button {
+  background: red;
+
+  &__text {
+    font-weight: bold;
+    color: orange;
+  }
+
+  &__icon {
+    margin: 0;
+  }
+}
+
+.form {
+  $block: &;
+
+  display: flex;
+  flex-direction: column;
+  max-width: 20em;
+
+  &__label {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #666;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25em;
+  }
+
+  &__input {
+    display: block;
+    padding: 0.5em;
+    margin-bottom: 0.25em;
+    border: 1px solid #999;
+    border-radius: 0.25em;
+  }
+
+  &__help {
+    font-size: 0.875em;
+    color: #666;
+
+    &--error {
+      color: rgb(180, 0, 0);
+    }
+  }
+
+  &--error {
+    #{$block}__label {
+      color: rgb(180, 0, 0);
+    }
+
+    #{$block}__input {
+      border-color: rgb(180, 0, 0);
+    }
+
+    #{$block}__help {
+      color: rgb(180, 0, 0);
+    }
+  }
+}
